@@ -11,9 +11,6 @@ import { ethers } from "ethers";
 // import { addresses, abis } from "@project/contracts";
 import GET_TRANSFERS from "./graphql/subgraph";
 
-import Web3 from 'web3';
-const web3 = new Web3(window.web3.currentProvider);
-
 var inbox14Abi = require('./inbox14.abi.json');
 
 async function readOnChainData() {
@@ -26,10 +23,8 @@ async function readOnChainData() {
 }
 
 async function writeOnChainData() {
-  // Should replace with the end-user wallet, e.g. Metamask
-  const provider = new getDefaultProvider('ropsten');
 
-  const signer = (new ethers.providers.Web3Provider(window.ethereum)).getSigner()
+  const signer = (new ethers.providers.Web3Provider(window.ethereum, "ropsten")).getSigner();
 
   const inbox14Contract = new Contract(
     "0x4b0b43Bc0F80034935056781D63aFD2da323Ddb9", 
