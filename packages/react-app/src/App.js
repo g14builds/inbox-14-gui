@@ -1,6 +1,6 @@
 import React from "react";
 import { Contract } from "@ethersproject/contracts";
-import { getDefaultProvider, JsonRpcProvider } from "@ethersproject/providers";
+import { getDefaultProvider } from "@ethersproject/providers";
 import { useQuery } from "@apollo/react-hooks";
 import logo from "./ethereumLogo.png";
 import useWeb3Modal from "./hooks/useWeb3Modal";
